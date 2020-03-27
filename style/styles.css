@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700");
-.contacto {
+.parallax {
   background-image: url("https://tupuca.com/wp-content/uploads/2018/02/contact.jpg");
-  height: 500px;
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,12 +23,9 @@
   font-size: 80px;
 }
 
-.parallax {
-  /* The image used */
-  background-image: url("https://tupuca.com/wp-content/uploads/2018/02/contact.jpg");
-  /* Set a specific height */
+.parallax-2 {
+  background-image: url("https://www.datacrush.la/wp-content/uploads/2016/12/image4-8.jpg");
   min-height: 500px;
-  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -46,12 +47,9 @@
   font-size: 80px;
 }
 
-.parallax-2 {
-  /* The image used */
-  background-image: url("https://www.datacrush.la/wp-content/uploads/2016/12/image4-8.jpg");
-  /* Set a specific height */
+.parallax-3 {
+  background-image: url("https://www.alento.pt/public/uploads/images/a7821965dc5f90cd63b162b75668f2c6.jpg");
   min-height: 500px;
-  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -73,11 +71,11 @@
   font-size: 80px;
 }
 
-.parallax-3 {
+.parallax-4 {
   /* The image used */
-  background-image: url("https://www.alento.pt/public/uploads/images/a7821965dc5f90cd63b162b75668f2c6.jpg");
+  background-image: url("https://ae01.alicdn.com/kf/HTB1oI0JcVkoBKNjSZFEq6zrEVXaP/Toys-Story-Cartoon-White-Clouds-Blue-Sky-faux-rustic-wood-backdrops-Vinyl-cloth-High-quality-Computer.jpg");
   /* Set a specific height */
-  min-height: 500px;
+  min-height: 400px;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -100,16 +98,20 @@
   font-size: 80px;
 }
 
-.parallax-4 {
-  /* The image used */
-  background-image: url("https://ae01.alicdn.com/kf/HTB1oI0JcVkoBKNjSZFEq6zrEVXaP/Toys-Story-Cartoon-White-Clouds-Blue-Sky-faux-rustic-wood-backdrops-Vinyl-cloth-High-quality-Computer.jpg");
-  /* Set a specific height */
-  min-height: 400px;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+footer {
+  background-color: #181818;
+  color: #aaaaaa;
+  font-weight: lighter;
+}
+
+footer img {
+  height: 30px;
+  padding-right: 24px;
+}
+
+.contacto {
+  background-image: url("https://tupuca.com/wp-content/uploads/2018/02/contact.jpg");
+  height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,10 +147,15 @@
   top: 0;
 }
 
+.card-imagen img {
+  max-height: 200px;
+  overflow: hidden;
+}
+
 /* The ribbons */
 .corner-ribbon {
   width: 200px;
-  background: #e43;
+  background: #2c7;
   position: absolute;
   top: 25px;
   left: -50px;
@@ -160,51 +167,22 @@
   -webkit-transform: rotate(-45deg);
 }
 
-.card-imagen img {
-  max-height: 200px;
-  overflow: hidden;
-}
-
-/* Custom styles */
-.corner-ribbon.shadow {
+.corner-ribbon .shadow {
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Different positions */
-.corner-ribbon.top-left {
-  top: 25px;
+.corner-ribbon .top-left {
   left: -50px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
 
-footer {
-  background-color: #181818;
-  color: #aaaaaa;
-  font-weight: lighter;
-}
-
-footer img {
-  height: 30px;
-  padding-right: 24px;
-}
-
-.corner-ribbon.top-right {
-  top: 25px;
+.corner-ribbon .top-right {
   right: -50px;
   left: auto;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-}
-
-/* Colors */
-.corner-ribbon.green {
-  background: #2c7;
-}
-
-.corner-ribbon.red {
-  background: #e43;
 }
 
 .perfil img {
