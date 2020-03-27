@@ -2,6 +2,8 @@
 @import "./parallax";
 @import "./variables";
 @import "./footer";
+@import "./header";
+@import "./mainPage";
 
 .contacto{
   background-image: url('https://tupuca.com/wp-content/uploads/2018/02/contact.jpg');
@@ -15,55 +17,10 @@
     height: 36px;
   }
 }
-.encabezado{
-  position: relative;
-  h1{
-    padding-top: 120px;
-    z-index: 2;
-    position: absolute;
-    font-size: 100px;
-    width: 100%;
-    height: 26px;
-    text-align: center;
-  }
-  img{
-    width: 100%;
-    position: absolute;
-    top:0;
-  }
-}
 .card-imagen {
   img{
     max-height: 200px;
     overflow: hidden;
-  }
-}
-/* The ribbons */
-.corner-ribbon{
-  width: 200px;
-  background: $backgoundRibbon;
-  position: absolute;
-  top: 25px;
-  left: -50px;
-  text-align: center;
-  line-height: 50px;
-  letter-spacing: 1px;
-  color: #f0f0f0;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  .shadow{
-    box-shadow: 0 0 3px rgba(0,0,0,.3);
-  }
-  .top-left{
-    left: -50px;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-  }
-  .top-right{
-    right: -50px;
-    left: auto;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
   }
 }
 .perfil {

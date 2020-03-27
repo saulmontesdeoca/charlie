@@ -48,7 +48,7 @@
 }
 
 .parallax-3 {
-  background-image: url("https://www.alento.pt/public/uploads/images/a7821965dc5f90cd63b162b75668f2c6.jpg");
+  background-image: url("https://ae01.alicdn.com/kf/HTB1oI0JcVkoBKNjSZFEq6zrEVXaP/Toys-Story-Cartoon-White-Clouds-Blue-Sky-faux-rustic-wood-backdrops-Vinyl-cloth-High-quality-Computer.jpg");
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
@@ -71,33 +71,6 @@
   font-size: 80px;
 }
 
-.parallax-4 {
-  /* The image used */
-  background-image: url("https://ae01.alicdn.com/kf/HTB1oI0JcVkoBKNjSZFEq6zrEVXaP/Toys-Story-Cartoon-White-Clouds-Blue-Sky-faux-rustic-wood-backdrops-Vinyl-cloth-High-quality-Computer.jpg");
-  /* Set a specific height */
-  min-height: 400px;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.parallax-4 h1 {
-  font-family: 'Roboto mono', monospace;
-  color: white;
-  font-size: 80px;
-}
-
 footer {
   background-color: #181818;
   color: #aaaaaa;
@@ -107,24 +80,6 @@ footer {
 footer img {
   height: 30px;
   padding-right: 24px;
-}
-
-.contacto {
-  background-image: url("https://tupuca.com/wp-content/uploads/2018/02/contact.jpg");
-  height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.newsfeed img {
-  height: 36px;
 }
 
 .encabezado {
@@ -145,11 +100,6 @@ footer img {
   width: 100%;
   position: absolute;
   top: 0;
-}
-
-.card-imagen img {
-  max-height: 200px;
-  overflow: hidden;
 }
 
 /* The ribbons */
@@ -183,6 +133,29 @@ footer img {
   left: auto;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+.contacto {
+  background-image: url("https://tupuca.com/wp-content/uploads/2018/02/contact.jpg");
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newsfeed img {
+  height: 36px;
+}
+
+.card-imagen img {
+  max-height: 200px;
+  overflow: hidden;
 }
 
 .perfil img {
