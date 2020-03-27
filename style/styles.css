@@ -2,13 +2,19 @@
 .contacto {
   background-image: url("https://tupuca.com/wp-content/uploads/2018/02/contact.jpg");
   height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .parallax h1 {
-  font-family: "Roboto mono", monospace;
+  font-family: 'Roboto mono', monospace;
   color: white;
   font-size: 80px;
 }
@@ -23,13 +29,19 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .parallax-2 h1 {
-  font-family: "Roboto mono", monospace;
+  font-family: 'Roboto mono', monospace;
   color: white;
   font-size: 80px;
 }
@@ -44,13 +56,19 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .parallax-3 h1 {
-  font-family: "Roboto mono", monospace;
+  font-family: 'Roboto mono', monospace;
   color: white;
   font-size: 80px;
 }
@@ -65,9 +83,15 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .newsfeed img {
@@ -109,9 +133,15 @@
   -webkit-transform: rotate(-45deg);
 }
 
+.card-imagen img {
+  max-height: 200px;
+  overflow: hidden;
+}
+
 /* Custom styles */
 .corner-ribbon.shadow {
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Different positions */
@@ -120,6 +150,17 @@
   left: -50px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+}
+
+footer {
+  background-color: #181818;
+  color: #aaaaaa;
+  font-weight: lighter;
+}
+
+footer img {
+  height: 30px;
+  padding-right: 24px;
 }
 
 .corner-ribbon.top-right {
@@ -138,5 +179,4 @@
 .corner-ribbon.red {
   background: #e43;
 }
-
 /*# sourceMappingURL=styles.css.map */
