@@ -1,76 +1,93 @@
 .contacto{
-    background-image: url('https://tupuca.com/wp-content/uploads/2018/02/contact.jpg');
-    height: 500px;
-    display: flex;
+  background-image: url('https://tupuca.com/wp-content/uploads/2018/02/contact.jpg');
+  height: 500px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 .parallax h1{
-    font-family: 'Roboto mono', monospace;
-    color: white;
-    font-size: 80px;
+  font-family: 'Roboto mono', monospace;
+  color: white;
+  font-size: 80px;
 }
 .parallax {
-    /* The image used */
-    background-image: url("https://tupuca.com/wp-content/uploads/2018/02/contact.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px; 
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .parallax-2 h1{
-    font-family: 'Roboto mono', monospace;
-    color: white;
-    font-size: 80px;
+  /* The image used */
+  background-image: url("https://tupuca.com/wp-content/uploads/2018/02/contact.jpg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parallax-2 h1{
+  font-family: 'Roboto mono', monospace;
+  color: white;
+  font-size: 80px;
 }
 .parallax-2 {
-    /* The image used */
-    background-image: url("https://www.datacrush.la/wp-content/uploads/2016/12/image4-8.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px; 
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .parallax-3 h1{
-    font-family: 'Roboto mono', monospace;
-    color: white;
-    font-size: 80px;
+  /* The image used */
+  background-image: url("https://www.datacrush.la/wp-content/uploads/2016/12/image4-8.jpg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parallax-3 h1{
+  font-family: 'Roboto mono', monospace;
+  color: white;
+  font-size: 80px;
 }
 .parallax-3 {
-    /* The image used */
-    background-image: url("https://www.alento.pt/public/uploads/images/a7821965dc5f90cd63b162b75668f2c6.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px; 
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .newsfeed img{
-      height: 36px;
-  }
+  /* The image used */
+  background-image: url("https://www.alento.pt/public/uploads/images/a7821965dc5f90cd63b162b75668f2c6.jpg");
+  /* Set a specific height */
+  min-height: 500px; 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parallax-4 h1{
+  font-family: 'Roboto mono', monospace;
+  color: white;
+  font-size: 80px;
+}
+.parallax-4 {
+  /* The image used */
+  background-image: url("https://ae01.alicdn.com/kf/HTB1oI0JcVkoBKNjSZFEq6zrEVXaP/Toys-Story-Cartoon-White-Clouds-Blue-Sky-faux-rustic-wood-backdrops-Vinyl-cloth-High-quality-Computer.jpg");
+  /* Set a specific height */
+  min-height: 400px; 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.newsfeed img{
+  height: 36px;
+}
 .encabezado{
     position: relative;
 }
@@ -145,3 +162,9 @@ footer img{
 
 .corner-ribbon.green{background: #2c7;}
 .corner-ribbon.red{background: #e43;}
+
+.perfil img{
+  height: 230px;
+  border-radius: 100%;
+  border: 5px solid white;
+}
