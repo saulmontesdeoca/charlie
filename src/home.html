@@ -1,60 +1,204 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:700&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:700&display=swap" rel="stylesheet">
 
-        <!-- Bootstrap CSS -->
-        <link href="../bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
-         <!-- Our own scss file-->
-        <link rel="stylesheet" href="../style/styles.css">
-        <title>Home</title>
-        <!-- <link rel='stylesheet' href='style/estilos.css'> -->
-    </head>
-    <body style="background-color: #5A656A;">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" style="font-family: 'Roboto mono', monospace;" href="./home.html">Charlie.</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-              </nav>
-        </header>
-        <div class="container">
-            <div class="row justify-content-center pt-4">
-                <div class="col-md-12 col-lg-7 col-sm-12">
-                    <h1 class="display-4 text-white"> <center>Inicia Sesión </center> </h1>
-                </div>
+    <!-- Bootstrap CSS -->
+    <link href="../bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <!-- Our own scss file-->
+    <link rel="stylesheet" href="../style/styles.css">
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="corner-ribbon top-left sticky green shadow">BETA VERSION</div>
+            <a class="navbar-brand" style="font-family: 'Roboto mono', monospace;" href="./home.html">Charlie.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./home.html">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./newsfeed.html">News Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./perfil.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.html">Log in</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
             </div>
-            <div class="row justify-content-center pt-3">
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="card">
-                        <div class="card-body">
-                            <form action="./about.html">
-                                <div class="form-group">
-                                  <label for="exampleInputEmail1">Email:</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@example.com" required>
-                                  <small id="emailHelp" class="form-text text-muted">Correo electrónico válido.</small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password:</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" required>
-                                  </div>
-                                <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
-                              </form>
-                              <br>
-                              ¿No tienes una cuenta? <a href="./register.html">Regístrate</a>
-
-                        </div>
-                      </div>
-                </div>
+          </nav>
+          
+    </header>
+    <div class="container-fluid p-0 parallax-2">
+        <div class="row align-items-center">
+            <div class="col align-self-center">
+                <h1>Home</h1>
             </div>
         </div>
+    </div>
+
+
+    <div class="container newsfeed">
+
+        <div class="row justify-content-center">
+          <div class="col-10 p-4">
+            <h1 class="display-3">News Feed</h1>
+            <hr class="my-4">
+  
+          </div>
+        </div>
+        <div class="row justify-content-center pb-3">
+          <div class="col-md-7">
+            <div class="form-group">
+              <h5>Escribir:</h5>
+              <textarea class="form-control" placeholder="¿En qué estas pensando?" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Compartir</button>
+  
+          </div>
+        </div>
+        <div class="row justify-content-center pb-3">
+          <div class="col-md-7">
+            <div class="card">
+              <div class="card-header">
+                <img src="../img/Charlie.jpeg" class="rounded mr-2" alt="...">
+                <strong class="mr-auto">Charlie</strong>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Acerca del proyecto:</h5>
+                <p class="card-text">En muchas ocasiones queremos vender artículos nuestros que se encuentran en buenas condiciones, sin embargo, es difícil llegar a un acuerdo con personas que no conocemos..</p>
+              </div>
+              <div class="card-footer text-muted">
+                15 min ago
+              </div>
+            </div>
+          </div>
+       </div>
+       <div class="row justify-content-center pb-3">
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header">
+              <img src="../img/Saul.jpeg" class="rounded mr-2" alt="...">
+              <strong class="mr-auto">Saúl</strong>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Acerca del proyecto:</h5>
+              <p class="card-text">Para poder ser vendedor/comprador en la aplicación se necesitará una cuenta la cual pedirá como requisitos: correo electrónico, la creación de una contraseña e identificación oficial como medida de seguridad. Al realizarse una compra, la aplicación retendrá el capital a disposición y lo liberará al tener el producto en nuestras manos, después de comprobar su condición.</p>
+            </div>
+            <div class="card-footer text-muted">
+              2 hours ago
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-3">
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header">
+              <img src="../img/Diegolas.jpeg" class="rounded mr-2" alt="...">
+              <strong class="mr-auto">Diegolas</strong>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Acerca del proyecto:</h5>
+              <p class="card-text">Otras soluciones como Segunda Mano y Mercadolibre obligan a existir un contacto entre comprador y vendedor, lo cual puede causar inseguridad y falta de integridad, además de desconfianza al vender tu producto.</p>
+            </div>
+            <div class="card-footer text-muted">
+              13 hours ago
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-3">
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header">
+              <img src="../img/Schlemp.jpeg" class="rounded mr-2" alt="...">
+              <strong class="mr-auto">Schlam</strong>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Acerca del proyecto:</h5>
+              <p class="card-text">Lo malo es que nunca sabemos si es seguro vender tus productos a esas personas ya que corremos el riesgo de que sea un perfil falso y al final te citen en algún lugar riesgoso para despojarte de tu producto.</p>
+            </div>
+            <div class="card-footer text-muted">
+              1 day ago
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-3">
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header">
+              <img src="../img/Diegolas.jpeg" class="rounded mr-2" alt="...">
+              <strong class="mr-auto">Diegolas</strong>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Acerca del proyecto:</h5>
+              <p class="card-text">Solución: Crear una herramienta en donde interpretaremos el rol de intermediario entre vendedor y comprador. El servicio como intermediario asegura que el producto dado por el vendedor esté en buenas condiciones y que se haya recibido el pago por parte del comprador, antes de enviar el producto y el dinero, respectivamente.</p>
+            </div>
+            <div class="card-footer text-muted">
+              2 days ago
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-3">
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header">
+              <img src="../img/Saul.jpeg" class="rounded mr-2" alt="...">
+              <strong class="mr-auto">Saúl</strong>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Acerca del proyecto:</h5>
+              <p class="card-text">La aplicación web a desarrollar tendrá como principal función generar la confianza de las compras por internet en los usuarios siendo un intermediario entre el comprador y el vendedor. Los vendedores podrán ingresar para postear sus productos.</p>
+            </div>
+            <div class="card-footer text-muted">
+              4 days ago
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+        <!-- Footer -->
+        <footer class="page-footer font-small unique-color-dark pt-4" style="background-color: rgb(29, 29, 29); color: whitesmoke;">
+            <div class="container">
+                <ul class="list-unstyled list-inline text-center py-2">
+                    <li class="list-inline-item">
+                        <h5 class="mb-1">Register for free</h5>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!" class="btn btn-outline-white btn-rounded">Sign up!</a>
+                    </li>
+                </ul>        
+            </div>        
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+            </div>        
+        </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-    </body>
+  </body>
 </html>
