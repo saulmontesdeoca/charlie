@@ -10,7 +10,7 @@
         <link href="../bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
          <!-- Our own scss file-->
         <link rel="stylesheet" href="../style/styles.css">
-        <title>Registro</title>
+        <title>Agregar</title>
         <!-- <link rel='stylesheet' href='style/estilos.css'> -->
     </head>
     <body style="background-color: #5A656A;">
@@ -37,6 +37,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="./login.html">Log in</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./validators.html">Validators</a>
+                        </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -49,7 +52,7 @@
         <div class="container pt-5">
             <div class="row justify-content-center pt-5">
                 <div class="col-md-12 col-lg-7 col-sm-12">
-                    <h1 class="display-4 text-white">Agregar Producto</h1>
+                    <h1 class="display-4 text-white"><center>Agregar Producto </center> </h1>
                 </div>
             </div>
             <div class="row justify-content-center pt-3">
@@ -95,10 +98,9 @@
                                   </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Agregar imagen:</label>
-                                    <button type="button" class="btn btn-primary btn-sm">Elegir imagen</button>
-                                  </div>
-                                
-                                <button type="submit" class="btn btn-primary btn-block">Crear cuenta</button>
+                                    <input type="file" id="img" name="img" accept="image/*">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Agregar artículo</button>
                               </form>
                         </div>
                       </div>
@@ -140,7 +142,7 @@
                                 <h5 class="mb-1">¿No tienes cuenta?</h5>
                             </li>
                             <li class="list-inline-item">
-                                <a href="./login.html" class="btn btn-outline-info btn-rounded">¡Registrate!</a>
+                                <a href="./register.html" class="btn btn-outline-info btn-rounded">¡Registrate!</a>
                             </li>
                         </ul>
                     </div>
