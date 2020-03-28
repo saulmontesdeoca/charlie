@@ -7,10 +7,12 @@
 
 .contacto{
   background-image: url('https://tupuca.com/wp-content/uploads/2018/02/contact.jpg');
-  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: auto ;
+  max-width: 100% ;
+  height: auto ;
 }
 .newsfeed {
   img{
