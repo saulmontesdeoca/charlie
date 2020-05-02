@@ -105,7 +105,7 @@ footer img {
 /* The ribbons */
 .corner-ribbon {
   width: 200px;
-  background: #2c7;
+  background: #2c00a4;
   position: absolute;
   top: 25px;
   left: -50px;
@@ -137,7 +137,6 @@ footer img {
 
 .contacto {
   background-image: url("https://tupuca.com/wp-content/uploads/2018/02/contact.jpg");
-  height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,6 +146,9 @@ footer img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .newsfeed img {
