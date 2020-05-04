@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './main-components/nav-bar/nav-bar.component';
 import { FooterComponent } from './main-components/footer/footer.component';
@@ -36,7 +37,9 @@ import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
