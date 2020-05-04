@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'news-feed', component: NewsFeedComponent},
   {path: 'contacto', component: ContactoComponent},
   {path: 'perfil', component: PerfilComponent},
-  {path: 'contacto', component: ComprarComponent},
+  {path: 'crear-cuenta', component: CrearCuentaComponent},
   {path: 'log-in', component: LogInComponent},
   {path: 'editar', component: EditarComponent},
   {path: 'comprar', component: ComprarComponent},
@@ -35,4 +35,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { } 
+export class AppRoutingModule { }
