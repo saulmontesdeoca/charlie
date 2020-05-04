@@ -18,22 +18,19 @@ import { CrearCuentaComponent } from './modules/shared/crear-cuenta/crear-cuenta
 import { AdminModule } from './modules/admin/admin.module';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'news-feed', component: NewsFeedComponent},
-  {path: 'contacto', component: ContactoComponent},
-  {path: 'perfil', component: PerfilComponent},
-  {path: 'crear-cuenta', component: CrearCuentaComponent},
-  {path: 'log-in', component: LogInComponent},
-  {path: 'editar', component: EditarComponent},
-  {path: 'comprar', component: ComprarComponent},
-  {path: 'agregar', component: AgregarComponent}
-
-
-
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'news-feed', component: NewsFeedComponent },
+  { path: 'contacto', component: ContactoComponent },
+  { path: 'perfil', component: PerfilComponent },
+  { path: 'crear-cuenta', component: CrearCuentaComponent },
+  { path: 'log-in', component: LogInComponent },
+  { path: 'editar', component: EditarComponent },
+  { path: 'comprar', component: ComprarComponent },
+  { path: 'agregar', component: AgregarComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
