@@ -17,6 +17,7 @@ import { FormProductoComponent } from './form-producto/form-producto.component';
 import { ComprarComponent } from './comprar/comprar.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminModule
 
   ],
   providers: [],
