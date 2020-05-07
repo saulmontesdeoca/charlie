@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-image-carrousel',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageCarrouselComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  isHomeView() {
+    // return true if the current page is home
+    return this.router.url.match('^/home$');
+  }
+
+  isContactView() {
+    // return true if the current page is login
+    return this.router.url.match('^/contacto$');
   }
 
 }
