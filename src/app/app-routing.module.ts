@@ -12,16 +12,16 @@ import { LogInComponent } from './modules/shared/log-in/log-in.component';
 import { CrearCuentaComponent } from './modules/shared/crear-cuenta/crear-cuenta.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'news-feed', component: NewsFeedComponent },
-  { path: 'contacto', component: ContactoComponent },
-  { path: 'perfil', component: PerfilComponent },
-  { path: 'crear-cuenta', component: CrearCuentaComponent },
-  { path: 'log-in', component: LogInComponent },
-  { path: 'editar', component: EditarComponent },
-  { path: 'comprar', component: ComprarComponent },
-  { path: 'agregar', component: AgregarComponent },
+  { path: '', component: HomeComponent, data: {animation: 'isLeft'} },
+  { path: 'home', component: HomeComponent, data: {animation: 'isLeft'}  },
+  { path: 'news-feed', component: NewsFeedComponent, data: {animation: 'isRight'}  },
+  { path: 'contacto', component: ContactoComponent, data: {animation: 'isLeft'}  },
+  { path: 'perfil', component: PerfilComponent, data: {animation: 'isRight'} },
+  { path: 'crear-cuenta', component: CrearCuentaComponent, data: {animation: 'isLeft'} },
+  { path: 'log-in', component: LogInComponent, data: {animation: 'isLeft'} },
+  { path: 'editar', component: EditarComponent, data: {animation: 'isLeft'}  },
+  { path: 'comprar', component: ComprarComponent, data: {animation: 'isRight'}  },
+  { path: 'agregar', component: AgregarComponent, data: {animation: 'isLeft'}  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

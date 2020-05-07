@@ -8,6 +8,10 @@
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap';
 
+main {
+  position: relative;
+}
+
 .contacto{
   background-image: url('https://tupuca.com/wp-content/uploads/2018/02/contact.jpg');
   display: flex;
