@@ -1,9 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainComponentsModule } from 'src/app/main-components/main-components.module';
+
+import { CompradorRoutingModule } from './comprador-routing.module';
+import { MainComponentsModule } from '../../main-components/main-components.module';
+
+import { HomeComponent } from './home/home.component';
+import { ComprarComponent } from './comprar/comprar.component';
+
+
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, MainComponentsModule],
+  declarations: [HomeComponent, ComprarComponent],
+  imports: [
+    CommonModule,
+    CompradorRoutingModule,
+    MainComponentsModule
+  ]
 })
-export class CompradorModule {}
+export class CompradorModule { }
