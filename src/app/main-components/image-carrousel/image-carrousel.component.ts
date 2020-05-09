@@ -16,7 +16,13 @@ export class ImageCarrouselComponent implements OnInit {
 
   isHomeView() {
     // return true if the current page is home
-    return this.router.url.match('^/home$');
+    if (this.router.url.match('^/home$')) {
+      return this.router.url.match('^/home$');
+    }
+
+    else if (this.router.url.match('^/$')) {
+      return this.router.url.match('^/$');
+    }
   }
 
   isContactView() {
