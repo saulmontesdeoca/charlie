@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import  *  as  data  from '../../../../data/data.json'
+import {UserService} from '../../../services/user.service'
 
 @Component({
   selector: 'app-home',
@@ -7,14 +7,14 @@ import  *  as  data  from '../../../../data/data.json'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  datos:  any  = (data  as  any).default;
-
-  constructor() { 
+  products: any;
+  constructor(private userService: UserService) { 
 
   }
 
   ngOnInit(): void {
-    console.log(this.datos);
+    this.products=this.userService.products
+    console.log(this.products);
   }
 
 }
