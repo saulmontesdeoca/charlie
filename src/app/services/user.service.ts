@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import  *  as  data  from '../../data/data.json'
+import { Router } from '@angular/router';
+import {product} from '../interfaces/product'
 
 
 @Injectable({
@@ -8,9 +10,23 @@ import  *  as  data  from '../../data/data.json'
 export class UserService {
   datos:  any  = (data  as  any).default;
   products: any = data.products;
-  constructor() { }
+  users: any = data.users;
+  user_products: any = this.users[0].products;
+  product: product;
+
+  constructor(private router: Router) { }
   
   addProduct(datos: any) {
     this.products.push(datos);
+    this.users[0].products.push(datos);
+    this.router.navigateByUrl('/home');
   }
+  removeProduct(index: number){
+    this.users[0].products.splice(index,1);
+  }
+  findProduct(index){
+    this.product=this.user_products[index];
+    console.log(this.product)
+  }
+
 }

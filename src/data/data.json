@@ -47,6 +47,28 @@
                 }
             ],
             "users": [
+              {
+                "name": "Diego Moreno",
+                "profile_pic": "../assets/img/Diegolas.jpeg",
+                "products": [
+
+                  {"name": "Nintendo Switch",
+                    "description": "Nintendo Switch seminuevo con dos juegos. Lamentablemente perdi uno de los joycons entonces el paquete solo incluría uno.",
+                   "price": 6200,
+                   "url":  "https://cdn.pocket-lint.com/r/s/1200x/assets/images/140007-games-review-nintendo-switch-review-image1-lp6zy9awm0.jpg"   
+                   },
+                   {"name": "Xbox One",
+                    "description": "Xbox One con algunos detalles en la parte trasera pero con muy buena funcionalidad",
+                    "price": 3200, 
+                    "url": "https://www.eluniversal.com.mx/sites/default/files/2020/02/13/xbox-one-jordan.jpg"  
+                    },
+                    {"name": "Batacas para bateria",
+                    "description": "Batacas seminuevas de muy buena calidad. Solo han sido usadas tres veces.",
+                    "price": 1200,
+                    "url": "https://www.dragonsports.eu/513571-verylarge_default/bate-de-beisbol.jpg"    
+                    }
+                ]
+              }
 
             ]
 }
