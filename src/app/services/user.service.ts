@@ -28,5 +28,18 @@ export class UserService {
     this.product=this.user_products[index];
     console.log(this.product)
   }
+  
+  updateProduct(id, name, description, price){
 
+    this.product=this.users[0].products.find(res => {
+      res.id==id;
+    });
+    if(this.product){
+      this.product.name = name;
+      this.product.description=description;
+      this.product.price = price;
+    }
+    
+    
+  }
 }

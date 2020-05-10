@@ -15,14 +15,14 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.userService.users[0];
+    console.log(this.user.products);
   }
   findElement(i){
-    console.log(i);
     this.userService.removeProduct(i);
   }
   findProduct(index){
     this.userService.findProduct(index);
-    console.log(this.product)
+    this.product=this.user.products[index];
   }
 
 }
