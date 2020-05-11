@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -16,6 +16,10 @@ import { LogInComponent } from './modules/shared/log-in/log-in.component';
 import { CrearCuentaComponent } from './modules/shared/crear-cuenta/crear-cuenta.component';
 import { AdminModule } from './modules/admin/admin.module';
 import { MainComponentsModule } from './main-components/main-components.module';
+import { registerLocaleData } from '@angular/common';
+import localUS from '@angular/common/locales/en';
+
+registerLocaleData(localUS, 'en');
 
 @NgModule({
   declarations: [
@@ -37,7 +41,7 @@ import { MainComponentsModule } from './main-components/main-components.module';
     AdminModule,
     MainComponentsModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
