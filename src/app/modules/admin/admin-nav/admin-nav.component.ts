@@ -8,9 +8,19 @@ import { Router } from '@angular/router';
 })
 export class AdminNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  isHomeView() {
+    // return true if the current page is home
+    if (this.router.url.match('^/$')) {
+      return this.router.url.match('^/$');
+    }
+    else if (this.router.url.match('^/main-admin$')) {
+      return this.router.url.match('^/main-admin$');
+    }
   }
 
 }
