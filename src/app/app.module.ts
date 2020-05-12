@@ -18,6 +18,7 @@ import { AdminModule } from './modules/admin/admin.module';
 import { MainComponentsModule } from './main-components/main-components.module';
 import { registerLocaleData } from '@angular/common';
 import localUS from '@angular/common/locales/en';
+import { StandoutDirective } from './directives/standout.directive';
 
 registerLocaleData(localUS, 'en');
 
@@ -33,6 +34,7 @@ registerLocaleData(localUS, 'en');
     ComprarComponent,
     LogInComponent,
     CrearCuentaComponent,
+    StandoutDirective,
   ],
   imports: [
     BrowserModule,
