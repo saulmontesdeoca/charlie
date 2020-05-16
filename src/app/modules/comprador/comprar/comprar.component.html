@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-8 order-md-1">
                   <h4 class="mb-3" i18n>Dirección de envío</h4>
-                  <form action="./home.html">
+                  <form action="" (submit)="onSubmit()" ngNativeValidate>
                     <div class="row">
                       <div class="col-md-6 mb-3">
                         <label for="firstName" i18n>Nombre</label>
@@ -99,9 +99,11 @@
                         <label for="zip" i18n>CP</label>
                         <input
                           type="text"
+                          pattern="[0-9]{5}"
                           class="form-control"
                           id="zip"
-                          placeholder=""
+                          placeholder="12345"
+                          title="CP de 5 digitos"
                           required
                         />
                       </div>
@@ -191,6 +193,7 @@
                         <label for="cc-number" i18n>Número de tarjeta</label>
                         <input
                           type="text"
+                          pattern="[0-9]{13,16}"
                           class="form-control"
                           id="cc-number"
                           placeholder=""
@@ -203,9 +206,10 @@
                         <label for="cc-expiration" i18n>Expiración</label>
                         <input
                           type="text"
+                          pattern="(?:0[1-9]|1[0-2])/[0-9]{2}"
                           class="form-control"
                           id="cc-expiration"
-                          placeholder=""
+                          placeholder="mm/yy"
                           required
                         />
                       </div>
@@ -213,6 +217,7 @@
                         <label for="cc-expiration">CVV</label>
                         <input
                           type="text"
+                          pattern="\d{3,4}"
                           class="form-control"
                           id="cc-cvv"
                           placeholder=""

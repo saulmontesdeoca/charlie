@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LOCALE_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-comprar',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComprarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, @Inject(LOCALE_ID) public locale: string) {  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    if (this.locale === 'en') {
+      alert('Product bought');
+    } else {
+      alert('Producto comprado');
+    }
+
+    this.router.navigateByUrl('/home');
   }
 
 }

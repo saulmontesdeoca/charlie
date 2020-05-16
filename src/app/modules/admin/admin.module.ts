@@ -19,6 +19,6 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
     GraficasComponent,
     AdminNavComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule, MainComponentsModule,ChartsModule],
+  imports: [CommonModule, AdminRoutingModule, MainComponentsModule, ChartsModule],
 })
 export class AdminModule {}
