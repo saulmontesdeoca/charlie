@@ -6,11 +6,12 @@ import { MainComponentsModule } from '../../main-components/main-components.modu
 
 import { HomeComponent } from './home/home.component';
 import { ComprarComponent } from './comprar/comprar.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, ComprarComponent],
+  declarations: [HomeComponent, ComprarComponent, CarritoComponent],
   imports: [
     CommonModule,
     CompradorRoutingModule,
