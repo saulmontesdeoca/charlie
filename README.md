@@ -1,4 +1,4 @@
-# Charlie - Proyecto Final
+# Charlie - Proyecto Final. Frontend
 ###### Gabriel Schlam Huber - A01024122
 ###### Saúl Montes De Oca Martínez - A01025975
 ###### Diego Alejandro Moreno Acevedo - A01022113
