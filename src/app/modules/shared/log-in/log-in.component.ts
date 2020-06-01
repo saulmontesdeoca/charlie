@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import {UserService} from '../../../services/user.service';
 
 @Component({
   selector: 'app-log-in',
@@ -8,14 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent implements OnInit {
+  email: string;
+  password: string;
+  idUser: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    this.router.navigateByUrl('/home');
+    const user = {email: this.email, password: this.password};
+    this.userService.login(user);
   }
 
 }

@@ -7,6 +7,7 @@ import { MainComponentsModule } from '../../main-components/main-components.modu
 import { ContactoComponent } from './contacto/contacto.component';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { StandoutDirective } from '../../directives/standout.directive';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [ContactoComponent, NewsFeedComponent],
@@ -15,6 +16,7 @@ import { StandoutDirective } from '../../directives/standout.directive';
     InfoRoutingModule,
     MainComponentsModule,
     StandoutDirective,
+    HttpClientModule
   ],
 })
 export class InfoModule {}

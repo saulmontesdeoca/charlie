@@ -15,12 +15,14 @@ import { ComprarComponent } from './modules/comprador/comprar/comprar.component'
 import { LogInComponent } from './modules/shared/log-in/log-in.component';
 import { CrearCuentaComponent } from './modules/shared/crear-cuenta/crear-cuenta.component';
 import { AdminModule } from './modules/admin/admin.module';
-import {CarritoComponent} from './modules/comprador/carrito/carrito.component'
+import { CarritoComponent} from './modules/comprador/carrito/carrito.component';
+import { ValidarCompraComponent} from './modules/comprador/validar-compra/validar-compra.component';
 import { MainComponentsModule } from './main-components/main-components.module';
 import { registerLocaleData } from '@angular/common';
 import localUS from '@angular/common/locales/en';
 import { StandoutDirective } from './directives/standout.directive';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { HttpClientModule} from '@angular/common/http';
 
 registerLocaleData(localUS, 'en');
 
@@ -38,6 +40,7 @@ registerLocaleData(localUS, 'en');
     CrearCuentaComponent,
     CarritoComponent,
     StandoutDirective,
+    ValidarCompraComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ registerLocaleData(localUS, 'en');
     BrowserModule,
     FormsModule,
     MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

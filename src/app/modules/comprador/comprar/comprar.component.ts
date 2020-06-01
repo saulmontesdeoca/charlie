@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LOCALE_ID, Inject } from '@angular/core';
 import {UserService} from '../../../services/user.service';
+import {Address } from 'src/app/interfaces/address';
+
 @Component({
   selector: 'app-comprar',
   templateUrl: './comprar.component.html',
@@ -11,25 +13,37 @@ export class ComprarComponent implements OnInit {
   carrito: any;
   total = 0;
 
+  address: Address = {street: '', country: '', state: '', zip: 12345};
   constructor(private router: Router, @Inject(LOCALE_ID) public locale: string, private userService: UserService) {  }
 
   ngOnInit(): void {
-    this.carrito = this.userService.carrito[1];
-    console.log(this.carrito.products[0].price);
-    for (let index = 0; index < this.carrito.products.length; index++) {
-      this.total += this.carrito.products[index].price;
-      console.log("Price "+ this.carrito.products[index].price);
+    if (this.userService.getUser() == null) {
+      alert('No has iniciado sesion');
+      this.router.navigateByUrl('/log-in');
     }
+    else{
+      this.userService.getCarritoUser().subscribe(carrito => {
+        this.carrito = carrito[0];
+        this.carrito.products.forEach(element => {
+          this.total += element.price;
+        });
+      });
+    }
+
   }
 
-  onSubmit() {
-    if (this.locale === 'en') {
-      alert('Products bought');
-    } else {
-      alert('Productos comprados');
-    }
-
-    this.router.navigateByUrl('/home');
+  buyItems(){
+    this.userService.buyProduct(this.address).subscribe(data => {
+      if (this.locale === 'en') {
+        alert('Products bought');
+      } else {
+        alert('Productos comprados');
+      }
+      this.router.navigateByUrl('/validar-compra');
+    },
+    error => {
+      console.log(error);
+    });
   }
 
 }

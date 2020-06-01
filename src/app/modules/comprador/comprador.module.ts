@@ -7,15 +7,17 @@ import { MainComponentsModule } from '../../main-components/main-components.modu
 import { HomeComponent } from './home/home.component';
 import { ComprarComponent } from './comprar/comprar.component';
 import { CarritoComponent } from './carrito/carrito.component';
-
+import { HttpClientModule} from '@angular/common/http';
+import { ValidarCompraComponent } from './validar-compra/validar-compra.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, ComprarComponent, CarritoComponent],
+  declarations: [HomeComponent, ComprarComponent, CarritoComponent, ValidarCompraComponent],
   imports: [
     CommonModule,
     CompradorRoutingModule,
-    MainComponentsModule
+    MainComponentsModule,
+    HttpClientModule
   ]
 })
 export class CompradorModule { }

@@ -206,14 +206,14 @@
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="439e6f35a6d999e2d73a634362d717badec0fe90" datatype="html">
+      <trans-unit id="8ff6f282cc380890d66406846ad06d415cc172d6" datatype="html">
         <source>
-            Comprar
+            Agregar al carrito
           </source>
-          <target>Buy</target>
+          <target>Add to cart</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/comprador/home/home.component.html</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f7c2becd4f0e6112d58b8d7923ba54ee0010b0b6" datatype="html">
@@ -718,6 +718,124 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/status-de-envio/status-de-envio.component.html</context>
           <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8baec46d2319abb7c22fcfb0d5ce899af28d3165" datatype="html">
+        <source>Mi carrito</source>
+        <target>Shopping cart</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/carrito/carrito.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="f55bd9ee265348190c395269bfed9039043b6ba0" datatype="html">
+        <source>
+            Seguir comprando
+          </source>
+          <target>Continue shopping</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/carrito/carrito.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="df9468c61808adf5d6082473a5b35a23102d48ab" datatype="html">
+        <source>Producto</source>
+          <target>Product</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/carrito/carrito.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/validar-compra/validar-compra.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d57ce960cceac0877b71d11a9931887f9c86ec73" datatype="html">
+        <source>Precio</source>
+        <target>Price</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/carrito/carrito.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/validar-compra/validar-compra.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c0cfd3e88d5d6af1d5f23914fb74cb353a83811" datatype="html">
+        <source>Eliminar</source>
+        <target>Remove</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/carrito/carrito.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6d842299da8198bb5a6ee30767a88fa006977e73" datatype="html">
+        <source>
+          Pagar
+          </source>
+        <target> Checkout</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/carrito/carrito.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="8fc49fa45f301f1a4a8e0e48f7455defd16887d5" datatype="html">
+        <source>Gracias por tu compra</source>
+        <target>Thank you for your purchase</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/validar-compra/validar-compra.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="95d1278e613d427d248244b548d68e4ce2a60106" datatype="html">
+        <source>Sobre tu compra</source>
+        <target>About your purchase</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/validar-compra/validar-compra.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="275080aec4890cd27e1761972bb2b9c1e02b2e4f" datatype="html">
+        <source>Valídanos tu compra:</source>
+        <target>Validate your purchase</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/validar-compra/validar-compra.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="12f6b3c3e27b10ddd124641911c58003df7cb66a" datatype="html">
+        <source>¿Llegó bien tu compra?</source>
+        <target>Did your purchase arrive well?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/validar-compra/validar-compra.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a3d678e59e1635b704319e41a98842aac19591d9" datatype="html">
+        <source>
+                Sí
+              </source>
+        <target>Yes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/validar-compra/validar-compra.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8dfcf9952a19619292338dc82f3c1c17c653c7eb" datatype="html">
+        <source> Déjanos un comentario adicional</source>
+        <target>Leave us an additional comment</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/validar-compra/validar-compra.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="01de17158ec5ff25baf3c6ffa9fc3375a25e0c6d" datatype="html">
+        <source>Enviar</source>
+        <target>Send</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/comprador/validar-compra/validar-compra.component.html</context>
+          <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
     </body>

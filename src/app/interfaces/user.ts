@@ -1,5 +1,9 @@
 export interface User {
-    name: string;
-    profile_pic: string;
-    products: any;
+  profile_pic: string;
+  name: string;
+  lname: string;
+  dBirth: string;
+  country: string;
+  email: string;
+  password: string;
 }
