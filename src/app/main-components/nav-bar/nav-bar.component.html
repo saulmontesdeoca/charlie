@@ -53,13 +53,13 @@
             >Perfil</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!getActive()">
           <a
             class="nav-link"
-            routerLink="../log-in"
+            (click)="logOut()"
             [routerLinkActive]="'active'"
             i18n
-            >Ingresar</a
+            >Cerrar sesión</a
           >
         </li>
         <li class="nav-item">
