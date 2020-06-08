@@ -9,6 +9,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,15 @@ import { HttpClientModule} from '@angular/common/http';
     ImageCarrouselComponent,
     NavBarComponent,
   ],
-  imports: [CommonModule, RouterModule, MDBBootstrapModule.forRoot()],
+  imports: [CommonModule, RouterModule, MDBBootstrapModule.forRoot(),NgbModule],
   exports: [
     FooterComponent,
     FormProductoComponent,
     ImageCarrouselComponent,
     NavBarComponent,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
 })
 export class MainComponentsModule {}

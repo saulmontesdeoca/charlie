@@ -9,10 +9,13 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-
-  constructor(private router: Router, public authService: AuthService) { }
+  isCollapsed: boolean;
+  constructor(private router: Router, public authService: AuthService) {
+    this.isCollapsed = true;
+   }
 
   ngOnInit(): void {
+
   }
 
   logOut() {

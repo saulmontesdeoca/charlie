@@ -25,6 +25,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AuthGuard} from './guards/auth.guard'
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap'
 
 registerLocaleData(localUS, 'en');
 
@@ -52,8 +53,9 @@ registerLocaleData(localUS, 'en');
     MainComponentsModule,
     BrowserModule,
     FormsModule,
+    NgbModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     AuthGuard,
