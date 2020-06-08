@@ -17,7 +17,7 @@ import { AuthGuard} from './guards/auth.guard'
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, data: {animation: 'isLeft'} },
+  { path: '', component: HomeComponent, data: {animation: 'isLeft'}, canActivate: [AuthGuard] },
   { path: 'home', component: HomeComponent, data: {animation: 'isLeft'}, canActivate: [AuthGuard]  },
   { path: 'news-feed', component: NewsFeedComponent, data: {animation: 'isRight'}, canActivate: [AuthGuard]  },
   { path: 'contacto', component: ContactoComponent, data: {animation: 'isLeft'}  },
