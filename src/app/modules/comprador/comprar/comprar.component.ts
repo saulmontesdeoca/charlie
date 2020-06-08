@@ -18,12 +18,11 @@ export class ComprarComponent implements OnInit {
 
   ngOnInit(): void {
    this.productsService.getCarritoUser().subscribe(carrito => {
-    this.carrito = carrito[0];
+      this.carrito = carrito[0];
       this.carrito.products.forEach(element => {
-        this.total += element.price;
+       this.total += element.price;
       });
     });
-
   }
 
   buyItems(){

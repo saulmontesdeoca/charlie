@@ -23,7 +23,6 @@ export class NewsFeedComponent implements OnInit {
 
   postFeed() {
     const post = {idUser: this.authService.getUser(), message: this.message};
-    console.log(post)
     this.newsFeedService.postFeed(post).subscribe(data => {
       alert('Post creado');
       window.location.reload();

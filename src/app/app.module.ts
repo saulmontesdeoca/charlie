@@ -23,9 +23,9 @@ import localUS from '@angular/common/locales/en';
 import { StandoutDirective } from './directives/standout.directive';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import { AuthGuard} from './guards/auth.guard'
+import { AuthGuard} from './guards/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 registerLocaleData(localUS, 'en');
 

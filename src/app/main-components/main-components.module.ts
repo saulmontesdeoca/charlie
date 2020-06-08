@@ -18,7 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ImageCarrouselComponent,
     NavBarComponent,
   ],
-  imports: [CommonModule, RouterModule, MDBBootstrapModule.forRoot(),NgbModule],
+  imports: [CommonModule, RouterModule, MDBBootstrapModule.forRoot(), NgbModule],
   exports: [
     FooterComponent,
     FormProductoComponent,
@@ -26,7 +26,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavBarComponent,
     BrowserModule,
     HttpClientModule,
-    
   ],
 })
 export class MainComponentsModule {}

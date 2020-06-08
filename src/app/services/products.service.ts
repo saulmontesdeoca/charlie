@@ -21,7 +21,9 @@ export class ProductsService {
       'Access-Control-Allow-Origin': '*'
     })
   };
-  constructor(private authService: AuthService, private router: Router, private http: HttpClient) { this.usr = this.authService.getUser()}
+  constructor(private authService: AuthService, private router: Router, private http: HttpClient) {
+    this.usr = this.authService.getUser();
+  }
 
   getProducts(i){
     return this.http.get(endpoint + 'allProducts/' + i);

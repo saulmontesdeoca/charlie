@@ -13,7 +13,7 @@ import { CrearCuentaComponent } from './modules/shared/crear-cuenta/crear-cuenta
 import { CarritoComponent } from './modules/comprador/carrito/carrito.component';
 import { ValidarCompraComponent} from './modules/comprador/validar-compra/validar-compra.component';
 
-import { AuthGuard} from './guards/auth.guard'
+import { AuthGuard} from './guards/auth.guard';
 
 
 const routes: Routes = [
