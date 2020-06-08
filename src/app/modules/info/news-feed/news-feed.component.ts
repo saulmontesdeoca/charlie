@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {NewsFeedService} from '../../../services/news-feed.service';
-import {UserService} from '../../../services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-news-feed',
@@ -12,28 +12,21 @@ export class NewsFeedComponent implements OnInit {
   feed: any;
   message: string;
 
-  constructor(private router: Router, private userService: UserService, private newsFeedService: NewsFeedService) {
+  constructor(private newsFeedService: NewsFeedService, private authService: AuthService, private router: Router) { }
 
-  }
 
   ngOnInit(): void {
-    if (this.userService.getUser() == null) {
-      alert('No has iniciado sesion');
-      this.router.navigateByUrl('/log-in');
-    }
-    else {
-      this.newsFeedService.getFeed().subscribe(feed => {
-        this.feed = feed;
-      });
-    }
-
+    this.newsFeedService.getFeed().subscribe(feed => {
+      this.feed = feed;
+    });
   }
 
   postFeed() {
-    const post = {idUser: this.userService.getUser(), message: this.message};
+    const post = {idUser: this.authService.getUser(), message: this.message};
+    console.log(post)
     this.newsFeedService.postFeed(post).subscribe(data => {
       alert('Post creado');
-      this.router.navigateByUrl('/home');
+      window.location.reload();
     },
     error => {
       console.log(error);

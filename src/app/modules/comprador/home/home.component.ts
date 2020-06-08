@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../../services/user.service';
+import {ProductsService} from '../../../services/products.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,34 +13,27 @@ export class HomeComponent implements OnInit {
   currentPage: number;
   pages: number;
 
-  constructor(private userService: UserService,  private router: Router) {
+  constructor(private productsService: ProductsService, private router: Router) {
 
   }
 
   ngOnInit(): void {
-    if (this.userService.getUser() == null) {
-      alert('No has iniciado sesion');
-      this.router.navigateByUrl('/log-in');
-    }
-    else {
-      this.userService.getProducts(1).subscribe(productos => {
-        this.products = productos;
-        console.log('this.products' + this.products);
-        this.currentPage = this.products.currentPage;
-        this.pages = this.products.pages;
-        this.allProducts = [];
-        this.products.products.forEach(element => {
-          element.products.forEach(prd => {
-            this.allProducts.push(prd);
-          });
+    this.productsService.getProducts(1).subscribe(productos => {
+      this.products = productos;
+      console.log('this.products' + this.products);
+      this.currentPage = this.products.currentPage;
+      this.pages = this.products.pages;
+      this.allProducts = [];
+      this.products.products.forEach(element => {
+        element.products.forEach(prd => {
+          this.allProducts.push(prd);
         });
       });
-    }
-
+    });
   }
 
   getProductsPage(i) {
-    this.userService.getProducts(i).subscribe(productos => {
+    this.productsService.getProducts(i).subscribe(productos => {
       this.products = productos;
       this.currentPage = this.products.currentPage;
       this.pages = this.products.pages;
@@ -56,7 +49,7 @@ export class HomeComponent implements OnInit {
   }
 
   agregarAlCarrito(id) {
-    this.userService.addProductToCarrito(id).subscribe(data => {
+    this.productsService.addProductToCarrito(id).subscribe(data => {
       alert('Producto agregado al carrito');
     },
     error => {

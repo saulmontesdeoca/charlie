@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../../interfaces/user';
-import {UserService} from '../../../services/user.service';
+import {ProductsService} from '../../../services/products.service';
 import {Product } from 'src/app/interfaces/product';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-editar',
   templateUrl: './editar.component.html',
@@ -17,17 +18,12 @@ export class EditarComponent implements OnInit {
   price: number;
   url: string;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private productsService: ProductsService, private router: Router) { }
 
 
   ngOnInit(): void {
-    if (this.userService.getUser() == null) {
-      alert('No has iniciado sesion');
-      this.router.navigateByUrl('/log-in');
-    }
-    else{
-      this.product = this.userService.product;
-    }
+    this.product = this.productsService.product;
+
   }
 
   updateProduct(){
@@ -38,7 +34,7 @@ export class EditarComponent implements OnInit {
       price: this.price,
       url: this.product.url};
 
-    this.userService.updateProduct(this.product.idProd, this.product).subscribe(data => {
+    this.productsService.updateProduct(this.product.idProd, this.product).subscribe(data => {
       alert('Producto editado');
       this.router.navigateByUrl('/perfil');
     },

@@ -34,16 +34,40 @@
           <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="66e9daee15cbf831a40b0f4c5df884ec139f710f" datatype="html">
+        <source>Ingresar</source>
+        <target>Log in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/footer/footer.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="28c0f4e51cd46c99c0eb24ace953b810f9392691" datatype="html">
+        <source>Registrarse</source>
+        <target>Register</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/footer/footer.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="e1ec80d1cecc8c466276dce7fc8caa95a6818ffe" datatype="html">
         <source>Cerrar sesión</source>
         <target>Logout</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/footer/footer.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main-components/nav-bar/nav-bar.component.html</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7bd83f7002b9de00d1e50cd86a75597cb697d57d" datatype="html">

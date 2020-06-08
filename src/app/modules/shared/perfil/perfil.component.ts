@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../../services/user.service';
+import {ProductsService} from '../../../services/products.service';
 import {Product } from 'src/app/interfaces/product';
 import { Router } from '@angular/router';
 
@@ -13,24 +13,18 @@ export class PerfilComponent implements OnInit {
   products: any;
   product: Product;
   idUser: any;
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private productsService: ProductsService, private router: Router) { }
 
   ngOnInit(): void {
-    if (this.userService.getUser() == null) {
-      alert('No has iniciado sesion');
-      this.router.navigateByUrl('/log-in');
-    }
-    else {
-      this.userService.getProductsUser().subscribe(productos => {
-        this.user = productos;
-        this.products = this.user.products;
-      });
-  }
+    this.productsService.getProductsUser().subscribe(productos => {
+      this.user = productos;
+      this.products = this.user.products;
+    });
   }
 
   findElement(index){
     this.product = this.products[index];
-    this.userService.removeProduct(this.product.idProd).subscribe(data => {
+    this.productsService.removeProduct(this.product.idProd).subscribe(data => {
       alert('Producto eliminado');
       window.location.reload();
     },
@@ -41,7 +35,7 @@ export class PerfilComponent implements OnInit {
 
   findProduct(index){
     this.product = this.products[index];
-    this.userService.setProduct(this.product);
+    this.productsService.setProduct(this.product);
   }
 
 }

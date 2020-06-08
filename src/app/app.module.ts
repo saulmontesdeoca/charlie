@@ -22,7 +22,9 @@ import { registerLocaleData } from '@angular/common';
 import localUS from '@angular/common/locales/en';
 import { StandoutDirective } from './directives/standout.directive';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { AuthGuard} from './guards/auth.guard'
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 registerLocaleData(localUS, 'en');
 
@@ -53,7 +55,14 @@ registerLocaleData(localUS, 'en');
     MDBBootstrapModule.forRoot(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

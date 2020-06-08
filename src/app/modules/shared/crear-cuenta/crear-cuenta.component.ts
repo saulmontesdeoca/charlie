@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {UserService} from '../../../services/user.service';
 import {User } from 'src/app/interfaces/user';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-crear-cuenta',
@@ -10,7 +10,7 @@ import {User } from 'src/app/interfaces/user';
 })
 export class CrearCuentaComponent implements OnInit {
   user: User = {profile_pic: '', name: '', lname: '', dBirth: '',  country: '', email: '', password: ''};
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   password: string;
   reingresaPassword: string;
@@ -22,7 +22,7 @@ export class CrearCuentaComponent implements OnInit {
   addUser(){
     if (this.password === this.reingresaPassword) {
       this.user.password = this.password;
-      this.userService.addUser(this.user).subscribe(data => {
+      this.authService.addUser(this.user).subscribe(data => {
         alert('Usuario creado');
         this.router.navigateByUrl('/log-in');
       },

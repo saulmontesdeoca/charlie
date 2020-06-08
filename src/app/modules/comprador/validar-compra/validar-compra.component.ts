@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../../services/user.service';
+import {ProductsService} from '../../../services/products.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,24 +12,18 @@ export class ValidarCompraComponent implements OnInit {
   validation: boolean;
   comment: string;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private productsService: ProductsService, private router: Router) { }
 
   ngOnInit(): void {
-    if (this.userService.getUser() == null) {
-      alert('No has iniciado sesion');
-      this.router.navigateByUrl('/log-in');
-    }
-    else{
-      this.userService.getCompraUser().subscribe(compra => {
-        this.compra = compra[0];
-      });
-    }
+    this.productsService.getCompraUser().subscribe(compra => {
+      this.compra = compra[0];
+    });
 
   }
 
   validarCompra() {
     this.validation = (document.getElementById('validation') as HTMLInputElement).checked;
-    this.userService.validarCompra(this.validation, this.comment).subscribe(data => {
+    this.productsService.validarCompra(this.validation, this.comment).subscribe(data => {
       alert('Gracias por tu validación');
       this.router.navigateByUrl('/home');
     },

@@ -13,19 +13,22 @@ import { CrearCuentaComponent } from './modules/shared/crear-cuenta/crear-cuenta
 import { CarritoComponent } from './modules/comprador/carrito/carrito.component';
 import { ValidarCompraComponent} from './modules/comprador/validar-compra/validar-compra.component';
 
+import { AuthGuard} from './guards/auth.guard'
+
+
 const routes: Routes = [
   { path: '', component: HomeComponent, data: {animation: 'isLeft'} },
-  { path: 'home', component: HomeComponent, data: {animation: 'isLeft'}  },
-  { path: 'news-feed', component: NewsFeedComponent, data: {animation: 'isRight'}  },
+  { path: 'home', component: HomeComponent, data: {animation: 'isLeft'}, canActivate: [AuthGuard]  },
+  { path: 'news-feed', component: NewsFeedComponent, data: {animation: 'isRight'}, canActivate: [AuthGuard]  },
   { path: 'contacto', component: ContactoComponent, data: {animation: 'isLeft'}  },
-  { path: 'perfil', component: PerfilComponent, data: {animation: 'isRight'} },
+  { path: 'perfil', component: PerfilComponent, data: {animation: 'isRight'}, canActivate: [AuthGuard] },
   { path: 'crear-cuenta', component: CrearCuentaComponent, data: {animation: 'isLeft'} },
   { path: 'log-in', component: LogInComponent, data: {animation: 'isLeft'} },
-  { path: 'editar', component: EditarComponent, data: {animation: 'isLeft'}  },
-  { path: 'comprar', component: ComprarComponent, data: {animation: 'isRight'}  },
-  { path: 'agregar', component: AgregarComponent, data: {animation: 'isLeft'}  },
-  { path: 'carrito', component: CarritoComponent},
-  { path: 'validar-compra', component: ValidarCompraComponent, data: {animation: 'isLeft'}  },
+  { path: 'editar', component: EditarComponent, data: {animation: 'isLeft'}, canActivate: [AuthGuard]  },
+  { path: 'comprar', component: ComprarComponent, data: {animation: 'isRight'}, canActivate: [AuthGuard]  },
+  { path: 'agregar', component: AgregarComponent, data: {animation: 'isLeft'}, canActivate: [AuthGuard]  },
+  { path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard]},
+  { path: 'validar-compra', component: ValidarCompraComponent, data: {animation: 'isLeft'}, canActivate: [AuthGuard]  },
 
 ];
 @NgModule({

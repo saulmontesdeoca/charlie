@@ -4,13 +4,14 @@ import {Product} from '../interfaces/product';
 import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import { map, catchError, tap} from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 const endpoint = 'http://localhost:8080/api/';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class ProductsService {
   result: any;
   usr: any;
   product: Product;
@@ -20,45 +21,7 @@ export class UserService {
       'Access-Control-Allow-Origin': '*'
     })
   };
-  constructor(private router: Router, private http: HttpClient) { }
-
-
-  addUser(user: any) {
-    return this.http.post(endpoint + 'users', user);
-  }
-
-  login(user) {
-
-    console.log(localStorage.getItem('idUser'));
-
-    if (localStorage.getItem('idUser') === null || localStorage.getItem('idUser') === undefined){
-      console.log('User null');
-      this.http.post(endpoint + 'login', user).subscribe(data => {
-        console.log(data);
-        this.usr = data;
-        this.usr = this.usr.key._id;
-        localStorage.setItem('idUser', this.usr); // Obtener ID usuario
-        console.log(this.usr);
-        this.router.navigateByUrl('/home');
-      },
-      error => {
-        alert(error.error.message);
-      });
-    }
-    else{
-      this.usr = localStorage.getItem('idUser');
-      console.log(this.usr);
-      this.router.navigateByUrl('/home');
-
-    }
-
-  }
-
-  logout() {
-    this.usr = '';
-    localStorage.removeItem('idUser');
-    return this.http.get(endpoint + 'logout');
-  }
+  constructor(private authService: AuthService, private router: Router, private http: HttpClient) { this.usr = this.authService.getUser()}
 
   getProducts(i){
     return this.http.get(endpoint + 'allProducts/' + i);

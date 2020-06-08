@@ -19,9 +19,19 @@
           <li>
             <a class="text-muted" routerLink="../perfil" i18n>Perfil</a>
           </li>
-          <li *ngIf="!getActive()">
+          <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+            <li class="nav-item" >
+              <a class="text-muted" routerLink="../log-in" i18n>Ingresar</a>
+            </li>
+            <li class="nav-item" >
+              <a class="text-muted" routerLink="../crear-cuenta" i18n>Registrarse</a>
+            </li>
+          </ng-container>
+          <ng-template #loggedIn>
+          <li class="nav-item" >
             <a class="text-muted" (click)="logOut()" i18n>Cerrar sesión</a>
           </li>
+          </ng-template>
           <li class="text-muted">
             <a
             href="../carrito"

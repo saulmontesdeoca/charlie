@@ -53,7 +53,28 @@
             >Perfil</a
           >
         </li>
-        <li class="nav-item" *ngIf="!getActive()">
+        <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+          <li class="nav-item" >
+            <a
+              class="nav-link"
+              routerLink="../log-in"
+              [routerLinkActive]="'active'"
+              i18n
+              >Ingresar</a
+            >
+          </li>
+            <li class="nav-item" >
+            <a
+              class="nav-link"
+              routerLink="../crear-cuenta"
+              [routerLinkActive]="'active'"
+              i18n
+              >Registrarse</a
+            >
+          </li>
+        </ng-container>
+        <ng-template #loggedIn>
+        <li class="nav-item" >
           <a
             class="nav-link"
             (click)="logOut()"
@@ -62,6 +83,7 @@
             >Cerrar sesión</a
           >
         </li>
+        </ng-template>
         <li class="nav-item">
           <a
             class="nav-link"
