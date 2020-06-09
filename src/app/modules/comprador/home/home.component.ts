@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from '../../../services/products.service';
 import { Router } from '@angular/router';
+import { LOCALE_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   currentPage: number;
   pages: number;
 
-  constructor(private productsService: ProductsService, private router: Router) {
+  constructor(private productsService: ProductsService, private router: Router, @Inject(LOCALE_ID) public locale: string) {
 
   }
 
@@ -50,7 +51,11 @@ export class HomeComponent implements OnInit {
 
   agregarAlCarrito(id) {
     this.productsService.addProductToCarrito(id).subscribe(data => {
-      alert('Producto agregado al carrito');
+      if (this.locale === 'en') {
+        alert('Product added to cart');
+      } else {
+        alert('Producto agregado al carrito');
+      }
     },
     error => {
       console.log(error);

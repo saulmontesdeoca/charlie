@@ -3,6 +3,7 @@ import {User} from '../../../interfaces/user';
 import {ProductsService} from '../../../services/products.service';
 import {Product } from 'src/app/interfaces/product';
 import { Router } from '@angular/router';
+import { LOCALE_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-editar',
@@ -18,7 +19,7 @@ export class EditarComponent implements OnInit {
   price: number;
   url: string;
 
-  constructor(private productsService: ProductsService, private router: Router) { }
+  constructor(private productsService: ProductsService, private router: Router, @Inject(LOCALE_ID) public locale: string) { }
 
 
   ngOnInit(): void {
@@ -35,7 +36,11 @@ export class EditarComponent implements OnInit {
       url: this.product.url};
 
     this.productsService.updateProduct(this.product.idProd, this.product).subscribe(data => {
-      alert('Producto editado');
+      if (this.locale === 'en') {
+        alert('Product updated');
+      } else {
+        alert('Producto editado');
+      }
       this.router.navigateByUrl('/perfil');
     },
     error => {

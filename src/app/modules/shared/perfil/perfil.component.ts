@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from '../../../services/products.service';
 import {Product } from 'src/app/interfaces/product';
-import { Router } from '@angular/router';
+import { LOCALE_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-perfil',
@@ -13,7 +13,7 @@ export class PerfilComponent implements OnInit {
   products: any;
   product: Product;
   idUser: any;
-  constructor(private productsService: ProductsService, private router: Router) { }
+  constructor(private productsService: ProductsService, @Inject(LOCALE_ID) public locale: string) { }
 
   ngOnInit(): void {
     this.productsService.getProductsUser().subscribe(productos => {
@@ -25,7 +25,11 @@ export class PerfilComponent implements OnInit {
   findElement(index){
     this.product = this.products[index];
     this.productsService.removeProduct(this.product.idProd).subscribe(data => {
-      alert('Producto eliminado');
+      if (this.locale === 'en') {
+        alert('Product removed');
+      } else {
+        alert('Producto eliminado');
+      }
       window.location.reload();
     },
     error => {
