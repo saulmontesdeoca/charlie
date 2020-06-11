@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from '../../../services/products.service';
 import { Router } from '@angular/router';
+import { LOCALE_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-carrito',
@@ -10,13 +11,17 @@ import { Router } from '@angular/router';
 export class CarritoComponent implements OnInit {
   carrito: any;
   total = 0;
-  constructor(private productsService: ProductsService, private router: Router) { }
+  constructor(private productsService: ProductsService, private router: Router, @Inject(LOCALE_ID) public locale: string) { }
 
   ngOnInit(): void {
     this.productsService.getCarritoUser().subscribe(carrito => {
       this.carrito = carrito[0];
       if (this.carrito == null || this.carrito.products.length === 0){
-        alert('Carrito vacio');
+        if (this.locale === 'en') {
+          alert('Shopping cart empty');
+        } else {
+          alert('Carrito vacio');
+        }
         this.router.navigateByUrl('/home');
       }
       else{
@@ -29,7 +34,11 @@ export class CarritoComponent implements OnInit {
 
   eliminarDelCarrito(id) {
     this.productsService.removeProductFromCarrito(id).subscribe(data => {
-      alert('Producto eliminado del carrito');
+      if (this.locale === 'en') {
+        alert('Product removed from cart');
+      } else {
+        alert('Producto eliminado del carrito');
+      }
       window.location.reload();
     },
     error => {

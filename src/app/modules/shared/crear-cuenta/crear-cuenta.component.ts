@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {User } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
+import { LOCALE_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-crear-cuenta',
@@ -10,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class CrearCuentaComponent implements OnInit {
   user: User = {profile_pic: '', name: '', lname: '', dBirth: '',  country: '', email: '', password: ''};
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService, @Inject(LOCALE_ID) public locale: string) { }
 
   password: string;
   reingresaPassword: string;
@@ -23,7 +24,11 @@ export class CrearCuentaComponent implements OnInit {
     if (this.password === this.reingresaPassword) {
       this.user.password = this.password;
       this.authService.addUser(this.user).subscribe(data => {
-        alert('Usuario creado');
+        if (this.locale === 'en') {
+          alert('User created');
+        } else {
+          alert('Usuario creado');
+        }
         this.router.navigateByUrl('/log-in');
       },
       error => {
@@ -35,8 +40,11 @@ export class CrearCuentaComponent implements OnInit {
       });
     }
     else {
-      alert('Contraseñas no son iguales');
-
+      if (this.locale === 'en') {
+        alert('Passwords do not match');
+      } else {
+        alert('Contraseñas no son iguales');
+      }
     }
 
   }

@@ -3,6 +3,7 @@ import {ProductsService} from '../../../services/products.service';
 import {Product } from 'src/app/interfaces/product';
 import {FormsModule, NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
+import { LOCALE_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-agregar',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AgregarComponent implements OnInit {
   product: Product = {idProd: 0, name: '', condition: '', description: '',  price: 0, url: ''};
-  constructor(private productsService: ProductsService, private router: Router) { }
+  constructor(private productsService: ProductsService, private router: Router, @Inject(LOCALE_ID) public locale: string) { }
 
   ngOnInit(): void {
 
@@ -20,7 +21,11 @@ export class AgregarComponent implements OnInit {
   }
   addProduct(){
     this.productsService.addProduct(this.product).subscribe(data => {
-      alert('Producto agregado');
+      if (this.locale === 'en') {
+        alert('Product added');
+      } else {
+        alert('Producto agregado');
+      }
       this.router.navigateByUrl('/home');
     },
     error => {
