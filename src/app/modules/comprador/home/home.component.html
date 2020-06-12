@@ -9,9 +9,16 @@
   </div>
 
   <div class="row justify-content-md-center">
-    <div class="col-md-4 col-sm-6 col-12" *ngFor="let product of allProducts; let i = index">
+    <div
+      class="col-md-4 col-sm-6 col-12 pb-4 overflow-hidden"
+      *ngFor="let product of allProducts; let i = index"
+    >
       <div class="card h-100">
-        <img src="{{ product.url }}" class="card-img-top img-responsive" alt="..." />
+        <img
+          src="{{ product.url }}"
+          class="card-img-top img-responsive"
+          alt="..."
+        />
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
           <p class="card-text">
@@ -35,55 +42,81 @@
   <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center pb-3">
       <ng-container *ngIf="currentPage == 1 && pages > 1; else second">
-        <li class="page-item disabled"><a class="page-link" (click)="getProductsPage(1)">
+        <li class="page-item disabled">
+          <a class="page-link" (click)="getProductsPage(1)">
             <span> &laquo;</span>
-        </a></li>
-        <li class="page-item active"><a class="page-link" (click)="getProductsPage(currentPage)">
-            <span> {{currentPage}}</span>
-        </a></li>
-        <li class="page-item"><a class="page-link" (click)="getProductsPage(currentPage + 1)">
-            <span> {{currentPage + 1}}</span>
-        </a></li>
-        <li class="page-item"><a class="page-link" (click)="getProductsPage(pages)">
+          </a>
+        </li>
+        <li class="page-item active">
+          <a class="page-link" (click)="getProductsPage(currentPage)">
+            <span> {{ currentPage }}</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" (click)="getProductsPage(currentPage + 1)">
+            <span> {{ currentPage + 1 }}</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" (click)="getProductsPage(pages)">
             <span> &raquo;</span>
-        </a></li>
+          </a>
+        </li>
       </ng-container>
       <ng-template #second>
         <ng-container *ngIf="currentPage < pages; else third">
-          <li class="page-item"><a class="page-link" (click)="getProductsPage(1)">
+          <li class="page-item">
+            <a class="page-link" (click)="getProductsPage(1)">
               <span> &laquo;</span>
-          </a></li>
-          <li class="page-item"><a class="page-link" (click)="getProductsPage(currentPage - 1)">
-              <span> {{currentPage - 1}}</span>
-          </a></li>
-          <li class="page-item active"><a class="page-link" (click)="getProductsPage(currentPage)">
-            <span> {{currentPage}}</span>
-          </a></li>
-          <li class="page-item"><a class="page-link" (click)="getProductsPage(currentPage + 1)">
-              <span> {{currentPage + 1}}</span>
-          </a></li>
-          <li class="page-item"><a class="page-link" (click)="getProductsPage(pages)">
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" (click)="getProductsPage(currentPage - 1)">
+              <span> {{ currentPage - 1 }}</span>
+            </a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" (click)="getProductsPage(currentPage)">
+              <span> {{ currentPage }}</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" (click)="getProductsPage(currentPage + 1)">
+              <span> {{ currentPage + 1 }}</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" (click)="getProductsPage(pages)">
               <span> &raquo;</span>
-          </a></li>
+            </a>
+          </li>
         </ng-container>
       </ng-template>
       <ng-template #third>
-        <li class="page-item"><a class="page-link" (click)="getProductsPage(1)">
+        <li class="page-item">
+          <a class="page-link" (click)="getProductsPage(1)">
             <span> &laquo;</span>
-        </a></li>
-         <li class="page-item"><a class="page-link" (click)="getProductsPage(currentPage - 1)">
-            <span> {{currentPage - 1}}</span>
-        </a></li>
-        <li class="page-item active"><a class="page-link" (click)="getProductsPage(currentPage)">
-            <span> {{currentPage}}</span>
-        </a></li>
-        <li class="page-item disabled"><a class="page-link" (click)="getProductsPage(pages)">
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" (click)="getProductsPage(currentPage - 1)">
+            <span> {{ currentPage - 1 }}</span>
+          </a>
+        </li>
+        <li class="page-item active">
+          <a class="page-link" (click)="getProductsPage(currentPage)">
+            <span> {{ currentPage }}</span>
+          </a>
+        </li>
+        <li class="page-item disabled">
+          <a class="page-link" (click)="getProductsPage(pages)">
             <span> &raquo;</span>
-        </a></li>
+          </a>
+        </li>
       </ng-template>
     </ul>
-    <br>
-    <br>
+    <br />
+    <br />
   </nav>
 </div>
 
