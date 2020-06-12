@@ -103,6 +103,10 @@ export class ProductsService {
     this.product = product;
   }
 
+  setCompra(product){
+    this.product = product;
+  }
+
   getUser() {
     this.usr = localStorage.getItem('idUser');
     console.log('this.usr: ' + this.usr);
@@ -116,4 +120,9 @@ export class ProductsService {
   updateProduct(id, product){
     return this.http.put(endpoint + 'products/' + id, product);
   }
+
+  updateStatus(id, status){
+    return this.http.put(endpoint + 'compras/' + id +"/"+ status , "");
+  }
+
 }

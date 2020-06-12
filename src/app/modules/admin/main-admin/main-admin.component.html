@@ -29,10 +29,12 @@
 
         <button
           type="button"
+          [routerLink]="['product-status-update', product.idProd]"
           class="btn btn-outline-success btn-block"
+          (click)="goToUpdate(product.idProd)"
           i18n
         >
-          Agregar al carrito
+          Update status
         </button>
       </div>
     </div>
