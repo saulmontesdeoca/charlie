@@ -16,8 +16,29 @@
     </div>
   </div>
 </div>
+<div class="row justify-content-md-center">
+  <div class="col-md-4 col-sm-6 col-12" *ngFor="let product of allProducts; let i = index">
+    <div class="card h-100">
+      <img src="{{ product.url }}" class="card-img-top img-responsive" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">
+          {{ product.description }}
+        </p>
+        <p class="card-text">${{ product.price }}.00.</p>
 
-<div class="container">
+        <button
+          type="button"
+          class="btn btn-outline-success btn-block"
+          i18n
+        >
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
   <div class="row justify-content-center">
     <div class="col-10 p-4 list-inline-item">
       <h1 class="display-3" i18n>Productos en Proceso</h1>
@@ -129,6 +150,5 @@
       </a>
     </li>
   </ul>
-</nav>
+</nav> -->
 <app-footer></app-footer>
-<app-chatbot></app-chatbot>

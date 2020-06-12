@@ -10,12 +10,18 @@ import { LOCALE_ID, Inject } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   isCollapsed: boolean;
+  showChatBot: boolean = false;
+
   constructor(private router: Router, public authService: AuthService, @Inject(LOCALE_ID) public locale: string) {
     this.isCollapsed = true;
    }
 
   ngOnInit(): void {
 
+  }
+
+  toggleChild(){
+    this.showChatBot = !this.showChatBot;
   }
 
   logOut() {

@@ -62,6 +62,10 @@ export class ProductsService {
     }));
   }
 
+  getCompras(id) {
+    return this.http.get(endpoint + 'compras/' + id);
+  }
+
   addProduct(datos: any) {
     delete datos.idProd;
     console.log('this.usr: ' + this.usr);
