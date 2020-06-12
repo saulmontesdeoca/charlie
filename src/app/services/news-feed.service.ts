@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
-const endpoint = 'http://localhost:8080/api/newsFeed';
+// const endpoint = 'http://localhost:8080/api/newsFeed';
+const endpoint = 'http://35.223.24.82:8080/api/newsFeed';
 
 
 @Injectable({

@@ -6,8 +6,8 @@ import { map, catchError, tap, timeout} from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
-const endpoint = 'http://localhost:8080/api/';
-
+// const endpoint = 'http://localhost:8080/api/';
+const endpoint = 'http://35.223.24.82:8080/api/';
 
 @Injectable({
   providedIn: 'root'
@@ -123,11 +123,11 @@ export class ProductsService {
   }
 
   getStatus(id){
-    return this.http.get(endpoint + 'compras/' + id)
+    return this.http.get(endpoint + 'compras/' + id);
   }
 
   updateStatus(id, sts){
-    return this.http.put(endpoint + 'compras/' + id, {status: sts})
+    return this.http.put(endpoint + 'compras/' + id, {status: sts});
   }
 
 }

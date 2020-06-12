@@ -32,7 +32,7 @@ export class MainAdminComponent implements OnInit {
   }
 
   goToUpdate(products){
-    this.router.navigate(['product-status-update',products]);
+    this.router.navigate(['product-status-update', products]);
     // this.router.router
   }
 }

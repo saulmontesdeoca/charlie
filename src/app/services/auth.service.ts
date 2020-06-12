@@ -8,7 +8,8 @@ import {
 import { catchError, tap, timeout} from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
-const endpoint = 'http://localhost:8080/api/';
+// const endpoint = 'http://localhost:8080/api/';
+const endpoint = 'http://35.223.24.82:8080/api/';
 
 @Injectable({
   providedIn: 'root',

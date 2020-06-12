@@ -1,6 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ProductsService} from '../../../services/products.service';
-import { Router,ParamMap  } from '@angular/router';
+import { Router, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 
@@ -21,23 +21,21 @@ export class ProductoStatusUpdateComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("hola Nisim")
     this.route.paramMap.subscribe(params => {
       this.product$ = +params.get('idProd');
       console.log(this.product$);
     });
     this.productsService.getStatus(this.product$).subscribe(status => {
-      this.result = status
+      this.result = status;
       this.actualStatus = this.result.status;
-      console.log("this.actualStatus" + this.actualStatus)
+      console.log('this.actualStatus ' + this.actualStatus);
     });
   }
 
   update(s){
-    console.log("Hola")
-    var id = this.product$;
-    var status = s;
-    this.productsService.updateStatus(id, status).subscribe(el => {console.log('hola')});
+    const id = this.product$;
+    const status = s;
+    this.productsService.updateStatus(id, status).subscribe(el => {console.log('hola'); });
     window.location.reload();
 
   }
