@@ -16,26 +16,28 @@
     </div>
   </div>
 </div>
-<div class="row justify-content-md-center">
-  <div class="col-md-4 col-sm-6 col-12" *ngFor="let product of allProducts; let i = index">
-    <div class="card h-100">
-      <img src="{{ product.url }}" class="card-img-top img-responsive" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{{ product.name }}</h5>
-        <p class="card-text">
-          {{ product.description }}
-        </p>
-        <p class="card-text">${{ product.price }}.00.</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-sm-6 col-12 pb-4 overflow-hidden" *ngFor="let product of allProducts; let i = index">
+      <div class="card h-100">
+        <img src="{{ product.url }}" class="card-img-top img-responsive" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">
+            {{ product.description }}
+          </p>
+          <p class="card-text">${{ product.price }}.00.</p>
 
-        <button
-          type="button"
-          [routerLink]="['product-status-update', product.idProd]"
-          class="btn btn-outline-success btn-block"
-          (click)="goToUpdate(product.idProd)"
-          i18n
-        >
-          Update status
-        </button>
+          <button
+            type="button"
+            [routerLink]="['product-status-update', product.idProd]"
+            class="btn btn-outline-success btn-block"
+            (click)="goToUpdate(product.idProd)"
+            i18n
+          >
+            Update status
+          </button>
+        </div>
       </div>
     </div>
   </div>

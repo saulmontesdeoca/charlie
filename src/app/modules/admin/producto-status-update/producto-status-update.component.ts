@@ -11,11 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductoStatusUpdateComponent implements OnInit {
   product$: any;
+  result: any;
+  actualStatus: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private productsService: ProductsService) { }
-              
+
 
   ngOnInit(): void {
 
@@ -24,18 +26,24 @@ export class ProductoStatusUpdateComponent implements OnInit {
       this.product$ = +params.get('idProd');
       console.log(this.product$);
     });
+    this.productsService.getStatus(this.product$).subscribe(status => {
+      this.result = status
+      this.actualStatus = this.result.status;
+      console.log("this.actualStatus" + this.actualStatus)
+    });
   }
-  
+
   update(s){
     console.log("Hola")
     var id = this.product$;
     var status = s;
     this.productsService.updateStatus(id, status).subscribe(el => {console.log('hola')});
+    window.location.reload();
 
   }
-  
-        
-    
-  
+
+
+
+
 
 }

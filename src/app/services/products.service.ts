@@ -63,7 +63,7 @@ export class ProductsService {
   }
 
   getCompras(id) {
-    return this.http.get(endpoint + 'compras/' + id);
+    return this.http.get(endpoint + 'compras');
   }
 
   addProduct(datos: any) {
@@ -121,8 +121,12 @@ export class ProductsService {
     return this.http.put(endpoint + 'products/' + id, product);
   }
 
-  updateStatus(id, status){
-    return this.http.put(endpoint + 'compras/' + id +"/"+ status , "");
+  getStatus(id){
+    return this.http.get(endpoint + 'compras/' + id)
+  }
+
+  updateStatus(id, sts){
+    return this.http.put(endpoint + 'compras/' + id, {status: sts})
   }
 
 }
