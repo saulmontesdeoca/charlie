@@ -64,7 +64,7 @@ export class ProductsService {
   }
 
   getCompras(id) {
-    return this.http.get(endpoint + 'compras/' + id);
+    return this.http.get(endpoint + 'compras');
   }
 
   addProduct(datos: any) {
@@ -104,6 +104,10 @@ export class ProductsService {
     this.product = product;
   }
 
+  setCompra(product){
+    this.product = product;
+  }
+
   getUser() {
     this.usr = localStorage.getItem('idUser');
     console.log('this.usr: ' + this.usr);
@@ -117,4 +121,13 @@ export class ProductsService {
   updateProduct(id, product){
     return this.http.put(endpoint + 'products/' + id, product);
   }
+
+  getStatus(id){
+    return this.http.get(endpoint + 'compras/' + id)
+  }
+
+  updateStatus(id, sts){
+    return this.http.put(endpoint + 'compras/' + id, {status: sts})
+  }
+
 }

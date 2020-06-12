@@ -9,7 +9,7 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
 
 const routes: Routes = [
   {path: 'main-admin', component: MainAdminComponent},
-  {path: 'product-status-update', component: ProductoStatusUpdateComponent},
+  {path: 'product-status-update/:idProd', component: ProductoStatusUpdateComponent},
   {path: 'status-de-envio', component: StatusDeEnvioComponent},
   {path: 'graficas', component: GraficasComponent},
   {path: 'admin-nav', component: AdminNavComponent}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ProductsService} from '../../../services/products.service';
 import { Router } from '@angular/router';
 import { LOCALE_ID, Inject } from '@angular/core';
@@ -29,5 +29,10 @@ export class MainAdminComponent implements OnInit {
           this.allProducts.push(prd._id);
         });
       });
+  }
+
+  goToUpdate(products){
+    this.router.navigate(['product-status-update',products]);
+    // this.router.router
   }
 }
