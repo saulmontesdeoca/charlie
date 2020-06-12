@@ -29,7 +29,5 @@ export class MainAdminComponent implements OnInit {
           this.allProducts.push(prd._id);
         });
       });
-    
   }
-
 }

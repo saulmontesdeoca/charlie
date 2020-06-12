@@ -32,7 +32,8 @@ export class ComprarComponent implements OnInit {
       } else {
         alert('Productos comprados');
       }
-      this.router.navigateByUrl('/validar-compra');
+      // this.router.navigateByUrl('/validar-compra');
+      this.router.navigateByUrl('/home');
     },
     error => {
       console.log(error);

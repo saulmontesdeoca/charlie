@@ -5,8 +5,9 @@ import {
   HttpHeaders,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { map, catchError, tap, timeout} from 'rxjs/operators';
+import { catchError, tap, timeout} from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 const endpoint = 'http://localhost:8080/api/';
 
 @Injectable({
@@ -14,6 +15,7 @@ const endpoint = 'http://localhost:8080/api/';
 })
 export class AuthService {
   usr: any;
+  current: any;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -23,14 +25,14 @@ export class AuthService {
   constructor(private router: Router, private http: HttpClient) {}
 
   addUser(user: any) {
-    return this.http.post<any>(endpoint + 'users', user).pipe(timeout(5000), catchError((error)=>{
-      return Observable.throw(error.statusText);
+    return this.http.post<any>(endpoint + 'users', user).pipe(timeout(5000), catchError((error) => {
+      return ErrorObservable.create('error');
     }));
   }
 
   login(user) {
-    return this.http.post<any>(endpoint + 'login', user).pipe(timeout(5000), catchError((error)=>{
-      return Observable.throw(error.statusText);
+    return this.http.post<any>(endpoint + 'login', user).pipe(timeout(5000), catchError((error) => {
+      return ErrorObservable.create('error');
     }));
   }
 
