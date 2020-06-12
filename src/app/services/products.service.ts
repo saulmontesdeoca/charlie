@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {Product} from '../interfaces/product';
 import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
-import { map, catchError, tap} from 'rxjs/operators';
+import { map, catchError, tap, timeout} from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 const endpoint = 'http://localhost:8080/api/';
@@ -26,21 +26,29 @@ export class ProductsService {
   }
 
   getProducts(i){
-    return this.http.get(endpoint + 'allProducts/' + i);
+    return this.http.get(endpoint + 'allProducts/' + i).pipe(timeout(5000), catchError((error)=>{
+      return Observable.throw(error.statusText);
+    }));
   }
 
   getProductsUser() {
-    return this.http.get(endpoint + 'productsUsers/' + this.usr);
+    return this.http.get(endpoint + 'productsUsers/' + this.usr).pipe(timeout(5000), catchError((error)=>{
+      return Observable.throw(error.statusText);
+    }));
   }
 
   getCarritoUser() {
     console.log('this.usr: ' + this.usr);
-    return this.http.get(endpoint + 'carrito/' + this.usr);
+    return this.http.get(endpoint + 'carrito/' + this.usr).pipe(timeout(5000), catchError((error)=>{
+      return Observable.throw(error.statusText);
+    }));
   }
 
   getCompraUser() {
     console.log('this.usr: ' + this.usr);
-    return this.http.get(endpoint + 'compra/' + this.usr);
+    return this.http.get(endpoint + 'compra/' + this.usr).pipe(timeout(5000), catchError((error)=>{
+      return Observable.throw(error.statusText);
+    }));
   }
 
   validarCompra(validacion: any, comentario: any){
@@ -49,23 +57,31 @@ export class ProductsService {
   }
 
   getProduct(id) {
-    return this.http.get(endpoint + 'products/' + id);
+    return this.http.get(endpoint + 'products/' + id).pipe(timeout(5000), catchError((error)=>{
+      return Observable.throw(error.statusText);
+    }));
   }
 
   addProduct(datos: any) {
     delete datos.idProd;
     console.log('this.usr: ' + this.usr);
     const prod = Object.assign({idUser: this.usr}, datos);
-    return this.http.post(endpoint + 'productsUsers', prod);
+    return this.http.post(endpoint + 'productsUsers', prod).pipe(timeout(5000), catchError((error)=>{
+      return Observable.throw(error.statusText);
+    }));
   }
 
   addProductToCarrito(id) {
     console.log(id);
-    return this.http.post(endpoint + 'carrito/' + this.usr, {idProd: id});
+    return this.http.post(endpoint + 'carrito/' + this.usr, {idProd: id}).pipe(timeout(5000), catchError((error)=>{
+      return Observable.throw(error.statusText);
+    }));
   }
 
   buyProduct(datos: any) {
-    return this.http.post(endpoint + 'compra/' + this.usr, {address: datos});
+    return this.http.post(endpoint + 'compra/' + this.usr, {address: datos}).pipe(timeout(5000), catchError((error)=>{
+      return Observable.throw(error.statusText);
+    }));
   }
 
   removeProductFromCarrito(id) {

@@ -5,7 +5,7 @@ import {
   HttpHeaders,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { map, catchError, tap } from 'rxjs/operators';
+import { map, catchError, tap, timeout} from 'rxjs/operators';
 import { Observable } from 'rxjs';
 const endpoint = 'http://localhost:8080/api/';
 
@@ -23,11 +23,15 @@ export class AuthService {
   constructor(private router: Router, private http: HttpClient) {}
 
   addUser(user: any) {
-    return this.http.post<any>(endpoint + 'users', user);
+    return this.http.post<any>(endpoint + 'users', user).pipe(timeout(5000), catchError((error)=>{
+      return Observable.throw(error.statusText);
+    }));
   }
 
   login(user) {
-    return this.http.post<any>(endpoint + 'login', user);
+    return this.http.post<any>(endpoint + 'login', user).pipe(timeout(5000), catchError((error)=>{
+      return Observable.throw(error.statusText);
+    }));
   }
 
   loggedIn() {

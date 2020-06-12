@@ -10,6 +10,7 @@ import { ProductoStatusUpdateComponent } from './producto-status-update/producto
 import { StatusDeEnvioComponent } from './status-de-envio/status-de-envio.component';
 import { GraficasComponent } from './graficas/graficas.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,6 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
     GraficasComponent,
     AdminNavComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule, MainComponentsModule, ChartsModule],
+  imports: [CommonModule, AdminRoutingModule, MainComponentsModule, ChartsModule, NgbModule],
 })
 export class AdminModule {}

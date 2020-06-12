@@ -7,8 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-nav.component.scss']
 })
 export class AdminNavComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  isCollapsed: boolean;
+  constructor(private router: Router) {
+    this.isCollapsed = true;
+   }
 
   ngOnInit(): void {
   }
