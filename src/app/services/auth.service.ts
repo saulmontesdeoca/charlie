@@ -1,24 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
-import { map, catchError, tap} from 'rxjs/operators';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse,
+} from '@angular/common/http';
+import { map, catchError, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 const endpoint = 'http://localhost:8080/api/';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   usr: any;
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Access-Control-Allow-Origin': '*'
-    })
+      'Access-Control-Allow-Origin': '*',
+    }),
   };
-  constructor(private router: Router, private http: HttpClient) { }
-
+  constructor(private router: Router, private http: HttpClient) {}
 
   addUser(user: any) {
     return this.http.post<any>(endpoint + 'users', user);
